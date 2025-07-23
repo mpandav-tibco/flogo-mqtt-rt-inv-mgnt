@@ -85,7 +85,7 @@
         "connectionTimeout": 5,
         "maxConnectAttempts": 0,
         "connectionRetryDelay": 5,
-        "tlsConfig": true,
+        "tlsConfig": false,
         "tlsParam": "disable",
         "cacert": "",
         "clientCert": "",
@@ -394,7 +394,7 @@
                   }
                 ],
                 "RuntimeQuery": "",
-                "State": "d9231a5d-11b1-4141-b007-1eada99fb662SELECT * FROM public.inventory WHERE item_id = ?item_id AND store_id = ?store_id;",
+                "State": "7b2550c6-78df-438d-abe0-4e94e52cd602SELECT * FROM public.inventory WHERE item_id = ?item_id AND store_id = ?store_id;",
                 "input": {
                   "mapping": {
                     "parameters": {
@@ -564,7 +564,7 @@
                     "Value": true
                   }
                 ],
-                "State": "1cebd573-28e0-4661-89d6-b3a8af13d318INSERT INTO public.inventory (item_id, store_id, low_stock_threshold, stock_level, last_updated)\n  VALUES (?item_id, ?store_id, ?stock_level , ?stock_level, ?last_updated)\n  ON CONFLICT (item_id, store_id) DO UPDATE\n  SET stock_level=?stock_level, last_updated=?last_updated;",
+                "State": "a2db40a4-e488-473d-ad49-cfa8c442bfaeINSERT INTO public.inventory (item_id, store_id, low_stock_threshold, stock_level, last_updated)\n  VALUES (?item_id, ?store_id, ?stock_level , ?stock_level, ?last_updated)\n  ON CONFLICT (item_id, store_id) DO UPDATE\n  SET stock_level=?stock_level, last_updated=?last_updated;",
                 "input": {
                   "mapping": {
                     "parameters": {
@@ -823,7 +823,7 @@
                   }
                 ],
                 "RuntimeQuery": "",
-                "State": "f66b2665-371e-4b2b-bea3-56f3ba1bedd8INSERT INTO public.inventory_log(\n\tlog_id, event_id, item_id, store_id, quantity_change, event_type, event_timestamp, new_stock_level)\n\tVALUES (?log_id, ?event_id, ?item_id, ?store_id, ?quantity_change, ?event_type, ?event_timestamp, ?new_stock_level);",
+                "State": "606854fd-101d-4f94-a432-84574353f464INSERT INTO public.inventory_log(\n\tlog_id, event_id, item_id, store_id, quantity_change, event_type, event_timestamp, new_stock_level)\n\tVALUES (?log_id, ?event_id, ?item_id, ?store_id, ?quantity_change, ?event_type, ?event_timestamp, ?new_stock_level);",
                 "input": {
                   "mapping": {
                     "values": [
@@ -1019,7 +1019,7 @@
     {
       "name": "PostgreSQL.postgresql-1.Password",
       "type": "string",
-      "value": "SECRET:o5+NihhwQCEnjKnw0Dulq81qDRUsSKiB"
+      "value": "SECRET:NkVQm7CUVjJePwDkRWNWGmGFDqwjz7u5"
     },
     {
       "name": "PostgreSQL.postgresql-1.Maximum_Open_Connections",
