@@ -1,0 +1,59 @@
+{
+  "suites": {},
+  "tests": {
+    "inventory_events_processing_engine:T": {
+      "name": "T",
+      "flowId": "flow:inventory_events_processing_engine",
+      "flowName": "inventory_events_processing_engine",
+      "disabled": false,
+      "flowInputs": {
+        "jsonValue": {
+          "event_id": "5063e77b-aaaa-4041-9a41-5f284ab07f96",
+          "item_id": "HAT-004",
+          "store_id": "paris",
+          "quantity_change": -2,
+          "event_type": "sales",
+          "timestamp": "2025-05-06T16:59:36.522601"
+        },
+        "topic": "store/london/sales"
+      }
+    },
+    "update_inventory_master_data:T": {
+      "name": "T",
+      "flowId": "flow:update_inventory_master_data",
+      "flowName": "update_inventory_master_data",
+      "disabled": false,
+      "flowInputs": {
+        "event_id": "5063e77b-aaaa-4041-9a41-5f284ab07f96",
+        "item_id": "HAT-004",
+        "store_id": "paris",
+        "quantity_change": -2,
+        "event_type": "sales",
+        "timestamp": "2025-05-06T16:59:36.522601"
+      }
+    },
+    "low_inventory_notifications:T": {
+      "name": "T",
+      "flowId": "flow:low_inventory_notifications",
+      "flowName": "low_inventory_notifications",
+      "disabled": false,
+      "activities": {
+        "Mapper": {
+          "type": "ASSERT_ON_OP",
+          "assertions": {
+            "Assertion1": {
+              "name": "Assertion1",
+              "valueAssertion": "$activity[Mapper].output.X == \"lalala\""
+            }
+          }
+        }
+      }
+    }
+  },
+  "type": "flogo:unittest",
+  "model": "1.1.1",
+  "app": {
+    "name": "real-time-inventory-management",
+    "version": "1.0.0"
+  }
+}
