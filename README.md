@@ -10,6 +10,10 @@ It demonstrates a real-time inventory management system using simulated IoT sens
 
 This project implements a real-time inventory management system for retail. It orchestrates data flow from IoT sensor simulations (Python) via MQTT to a PostgreSQL database, where Flogo updates inventory and triggers low-stock alerts. Flogo utilizes two main flows: one for MQTT-to-DB updates and another for reacting to PostgreSQL notifications for alerts.
 
+## Architecture Diagram
+
+![High_Level_Usecase_Overview](https://github.com/user-attachments/assets/423325f4-94e8-4239-a35f-11550a77451d)
+
 ## Prerequisites
 
 To run this project, you need:
